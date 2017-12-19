@@ -1,6 +1,6 @@
 '''
 validation.py
-Performs accuracy calculations to determine best branching factor.
+Performs accuracy calculations to determine best branching factor (among other things).
 '''
 
 import os 
@@ -16,8 +16,8 @@ import numpy as np
 
 BRANCHING_FACTORS = [10, 20, 30, 60]
 
-CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
-TEST_PATHS = ['Canon', 'Palm', 'Droid', 'E63']
+# Read the following test set folders.
+CURRENT_PATH =['TestSet1', 'TestSet2']
 TEST_ROOT = CURRENT_PATH + '/Trainer/Data/'
 TEST_DATA_POINTS = 100
 
