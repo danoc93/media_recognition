@@ -31,6 +31,8 @@ The project is built using Python 3.6, and assumes you have scikit-learn, numpy 
 # On simple_matcher.py
 This little program uses a saved model to score an image against the database to get the top N matches, and then extracts the best match using homographic projections. The results are then placed on an HTML page and shown to the user.
 
+The Result folder belongs only to simple_matcher. In theory they could be decoupled from the rest of the dataset.
+
 To run: python simple_matcher.py (-t optional to train model using current configs) file_path_to_match
 
 
