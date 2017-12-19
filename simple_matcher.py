@@ -69,6 +69,7 @@ if not top_match_vtpi:
 	print ('Could not find enough inliers in any of the matches!')
 	exit()
 
+# Pretty silly but simple way of changing the images used for the HTML file.
 from shutil import copyfile
 for i in range(len(best_matches)):
 	copyfile(best_matches[i], 'Result/T'+str(i))
