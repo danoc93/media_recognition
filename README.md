@@ -4,7 +4,7 @@ Visual media recognition using a vocabulary tree and homographic projections.
 # What does it do?
 Given a set of training images, the system can be used to label unseen images, and thus be used for looking up data from databases and such. A simple program that uses the system has been integrated (simple_matcher.py).
 
-The project can be used with other types of images, but all training-testing was performed using Stanford's media dataset (it has been included on the repo for the sake of showing some samples):
+The project can be used with other types of images, but all training-testing was performed using Stanford's media dataset (the training data (Reference) has been included on the repo for the sake of showing some samples):
 https://exhibits.stanford.edu/data/catalog/rr389hv5603
 
 For the first part, the following project attempts to implement the following paper:
