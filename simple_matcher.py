@@ -14,12 +14,14 @@ import sys
 import utils
 
 n = len(sys.argv)
-if n < 2 or n > 3 or (n == 3 and sys.argv[2] != '-t'):
+if n < 2 or n > 3 or (n == 3 and '-t' not in sys.argv):
 	print('Invalid arguments! [required: filepath], [optional: -t]')
 	exit()
 
 train = len(sys.argv) == 3
 queryFile = sys.argv[1]
+if train and queryFile == '-t':
+	queryFile = sys.argv[2]
 
 # Load the configuration.
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
