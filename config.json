@@ -1,0 +1,12 @@
+{
+	"trainingDataPath" : "/Trainer/Data/Reference",
+	"savedModelDataPath" : "/Model/tree.model",
+	"maxNumberOfDataPoints" : 100,
+	"maxNumberOfKeyPoints" : 700,
+	"branchingFactor" : 100,
+	"maxNumberOfLevels" : 101,
+	"maxNumOfMatches" : 10,
+	"kpThresholdHom" : 1,
+	"maxNumberOfKeyPointsHom" : 300,
+	"scaleFactor" : 200
+}
