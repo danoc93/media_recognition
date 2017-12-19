@@ -13,10 +13,9 @@ class Homography_Finder:
 		self.scaleFactor = scaleFactor
 
 	'''
-		Compute the number of inliers in the tomography between source and destination.
-		It also takes a best match so it can be drawn along the others.
-		This code was adapted to work on Python 3.6 
-		https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature_homography.html
+	Compute the number of inliers in the homography between source and destination.
+	This code was adapted to work on Python 3.6 
+	https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature_homography.html
 
 	'''
 	def findHomography(self, sourceImage, destinationImage):
@@ -69,38 +68,4 @@ class Homography_Finder:
 		return inliers, matchesMask, good
 
 
-	def plotTogeter(self, sourceImage, destinationImage, bestMatch, matchesMask, good, transform = None):
-
-		draw_params = dict(matchColor = (0,255,0), # draw matches in green color
-				   singlePointColor = None,
-				   matchesMask = matchesMask, # draw only inliers
-				   flags = 2)
-
-		img1 = cv2.imread(sourceImage, 0)
-		img2 = cv2.imread(destinationImage, 0)
-		imgbest = cv2.imread(bestMatch, 0)
-
-		kp1, des1 = self.siftExt.extractFeatures(sourceImage, True)
-		kp2, des2 = self.siftExt.extractFeatures(destinationImage, True)
-
-		img3 = cv2.drawMatches(img1,kp1,img2,kp2,good,None,**draw_params)
-
-		f, axarr = plt.subplots(2,2)
-		axarr[0,1].imshow(img3, 'gray')
-		axarr[0,1].axis('off')
-		axarr[0,1].set_title('Homography')
-
-		axarr[1,0].imshow(imgbest, 'gray')
-		axarr[1,0].axis('off')
-		axarr[1,0].set_title('Top From Tree Only')
-		
-		axarr[1,1].imshow(img2, 'gray')
-		axarr[1,1].axis('off')
-		axarr[1,1].set_title('Top From Tree + Less Inliners')
-		
-		axarr[0,0].imshow(img1, 'gray')
-		axarr[0,0].set_title('Target To Detect')
-		axarr[0,0].axis('off')
-
-		plt.show()
 
